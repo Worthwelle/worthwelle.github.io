@@ -1,0 +1,32 @@
+title: Worthwelle IT Services
+author: Worthwelle IT Services
+email: help@worthwelle.com
+phone: (760) 689-9389
+url: https://www.worthwelle.com
+description: > # this means to ignore newlines until "twitter_username:"
+  Worthwelle IT Services is a passionate and dedicated computer repair company in San Diego, specializing in home &amp; business IT consulting.
+
+# social links
+rss: rss
+twitter:
+  username: worthwelle
+  card: summary
+logo: img/wits_logo.png
+
+show_excerpts: true # set to true to show excerpts on the homepage
+google_analytics: UA-93480669-2
+
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  date_format: "%b %-d, %Y"
+
+# Build settings
+remote_theme: dauerwelle
+markdown: kramdown
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+ - jekyll-sitemap
+ - jekyll-redirect-from
+
