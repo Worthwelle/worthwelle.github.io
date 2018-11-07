@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.1
+  - 2.5.3
 script:
   - bundle exec jekyll build --future --drafts
   - bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html --url-ignore /www.worthwelle.com/
