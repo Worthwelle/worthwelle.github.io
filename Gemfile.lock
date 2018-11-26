@@ -28,7 +28,9 @@ GEM
     execjs (2.7.0)
     faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
+    fastimage (2.1.4)
     ffi (1.9.25)
+    fileutils (1.1.0)
     forwardable-extended (2.6.0)
     gemoji (3.0.0)
     github-pages (192)
@@ -226,6 +228,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redcarpet (3.4.0)
     rouge (2.2.1)
     ruby-enum (0.7.2)
       i18n
@@ -254,8 +257,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
+  fastimage
+  fileutils
   github-pages
   html-proofer
+  minitest
+  nokogiri
+  redcarpet
 
 BUNDLED WITH
    1.16.3
