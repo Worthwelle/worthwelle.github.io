@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.1
+  - 2.5.3
 script:
   - ruby -Ilib -e 'ARGV.each { |f| require f }' ./_tests/*.rb
   - bundle exec jekyll build --future --drafts
