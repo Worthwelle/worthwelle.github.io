@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Why should I turn it off and on again?"
+category: Basics
 ---
 
 A common complaint that we hear is that computers begin to run slower and slower over time. There are many possible reasons for this, but about half of the issues that we see can be resolved by a simple restart.

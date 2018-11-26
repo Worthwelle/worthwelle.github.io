@@ -16,6 +16,14 @@ logo: img/wits_logo.png
 show_excerpts: true # set to true to show excerpts on the homepage
 google_analytics: UA-93480669-2
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: "/:year/:month/:title.html"
+
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:

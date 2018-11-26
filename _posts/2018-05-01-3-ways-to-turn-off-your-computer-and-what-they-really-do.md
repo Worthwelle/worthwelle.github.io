@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "3 ways to turn off your computer and what they really do"
+category: Basics
 excerpt_separator: <!--more-->
 ---
 
