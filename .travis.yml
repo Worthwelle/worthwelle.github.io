@@ -4,7 +4,7 @@ rvm:
 before_install:
   - gem install bundler
 script:
-  - ruby -Ilib -e 'ARGV.each { |f| require f }' ./_tests/*.rb
+  - bundle exec ruby -Ilib -e 'ARGV.each { |f| require f }' ./_tests/*.rb
   - bundle exec jekyll build --future --drafts
   - bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html --url-ignore /www.worthwelle.com/
 env:
