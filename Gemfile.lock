@@ -262,6 +262,7 @@ DEPENDENCIES
   fileutils
   github-pages
   html-proofer
+  jekyll-redirect-from
   minitest
   nokogiri
   redcarpet

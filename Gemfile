@@ -11,4 +11,4 @@ gem 'minitest'
 gem 'fastimage'
 gem 'nokogiri'
 gem 'redcarpet'
-
+gem 'jekyll-redirect-from'

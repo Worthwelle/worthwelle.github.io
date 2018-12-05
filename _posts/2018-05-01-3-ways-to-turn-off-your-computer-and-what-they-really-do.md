@@ -3,6 +3,8 @@ layout: post
 title:  "3 ways to turn off your computer and what they really do"
 category: Basics
 excerpt_separator: <!--more-->
+redirect_from:
+  - /blog/2018/05/3-ways-to-turn-off-your-computer-and-what-they-really-do/
 ---
 
 When computer users think about the actions that they do the most often with their computers, they rarely include a very important action that most people do every single day. Turning their computer off.
