@@ -241,6 +241,16 @@ body {
 
 .post-meta {
 	color: #777;
+	padding-bottom: 15px;
+}
+
+.post-categories {
+	display: inline;
+}
+
+.post-categories li {
+	display: inline;
+	margin-right: 15px;
 }
 
 a {

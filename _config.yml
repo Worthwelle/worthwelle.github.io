@@ -15,6 +15,7 @@ logo: img/wits_logo.png
 
 show_excerpts: true # set to true to show excerpts on the homepage
 google_analytics: UA-93480669-2
+lang: en-US
 
 defaults:
   -
@@ -37,4 +38,18 @@ plugins:
  - jekyll-seo-tag
  - jekyll-sitemap
  - jekyll-redirect-from
+ - jekyll-index-pages
 
+index_pages:
+  posts:
+    title: Post Listing Page Title
+    excerpt: Post listing page excerpt
+    per_page: 5
+    permalink: /:label/
+    layout: index
+  categories:
+    title: Post Listing Page Title
+    excerpt: Post listing page excerpt
+    per_page: 5
+    permalink: /category/:label/
+    layout: index

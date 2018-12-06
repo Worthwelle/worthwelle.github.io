@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Why should I turn it off and on again?"
-category: Basics
+categories: [Basics]
 redirect_from:
   - /blog/2018/05/why-should-i-turn-it-off-and-on-again/
 ---

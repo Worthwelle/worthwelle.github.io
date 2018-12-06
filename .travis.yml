@@ -4,9 +4,9 @@ rvm:
 before_install:
   - gem install bundler
 script:
-  - bundle exec ruby -Ilib -e 'ARGV.each { |f| require f }' ./_tests/*.rb
   - bundle exec jekyll build --future --drafts
   - bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html --url-ignore /www.worthwelle.com/
+  - bundle exec ruby -Ilib -e 'ARGV.each { |f| require f }' ./_tests/*.rb
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer

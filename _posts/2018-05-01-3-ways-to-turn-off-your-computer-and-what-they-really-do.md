@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "3 ways to turn off your computer and what they really do"
-category: Basics
+categories: [Basics]
 excerpt_separator: <!--more-->
 redirect_from:
   - /blog/2018/05/3-ways-to-turn-off-your-computer-and-what-they-really-do/

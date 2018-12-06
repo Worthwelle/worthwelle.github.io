@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "What is the XY problem?"
-category: Basics, Philosophy
+title:  "What is the XY problem?"
+categories: [Basics, Philosophy]
+excerpt_separator: <!--more-->
 ---
 
 Whether they know it by name or not, most people who have worked in the customer service industry are likely familiar with the XY problem. When it comes to troubleshooting an issue for a customer, it is important to be aware of this phenomenon and be able to identify it when it is happening.
+<!--more-->
 
 ## The XY problem
 
