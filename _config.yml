@@ -53,3 +53,6 @@ index_pages:
     per_page: 5
     permalink: /tag/:label/
     layout: index
+
+kramdown:
+    footnote_backlink: "⤴"
