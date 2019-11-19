@@ -27,6 +27,13 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
+    {% if post.series %}
+        {% capture post_series %}series/{{ post.series }}.html{% endcapture %}
+        {% include {{ post_series }} %}
+    {% elsif page.series %}
+        {% capture post_series %}series/{{ page.series }}.html{% endcapture %}
+        {% include {{ post_series }} %}
+    {% endif %}
     {{ content }}
   </div>
 

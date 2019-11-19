@@ -301,3 +301,14 @@ a {
 article.container, main.page-content {
 	padding-botom: 2rem;
 }
+
+.post-series {
+	border: 3px solid #63154738;
+	margin: 15px;
+	padding: 8px;
+	border-radius: 5px;
+}
+
+.post-series p:first-child {
+	text-align: center;
+}
