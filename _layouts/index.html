@@ -4,7 +4,7 @@ layout: default
 {% assign pager = page.pager %}
 
 <div class="container">
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <h2 class="post-list-heading">{{ page.title | default: "Posts" }}</h2>
     <ul class="post-list">
         {% for post in pager.docs %}
         <li>
@@ -13,23 +13,27 @@ layout: default
                     {{ post.title | escape }}
                 </a>
             </h3>
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
             <div class="post-meta">{{ post.date | date: date_format }}</div>
             {%- if site.show_excerpts -%}
-                {{ post.excerpt }}
+                {{ post.excerpt | strip_html | truncatewords:75 }}
             {%- endif -%}
         </li>
         {% endfor %}
     </ul>
-	<div><p class="text-center text-muted">
     {% if pager.total_pages > 1 %}
-      {% if pager.prev_page > 0 %}
-      <a href="{{ pager.prev_page_url }}">Prev</a>
-      {% endif %}
-      <span>{{ pager.total_pages }} pages</span>
-      {% if pager.next_page > 0 %}
-      <a href="{{ pager.next_page_url }}">Next</a>
-      {% endif %}
+    <div class="previous-next-post-links">
+      <div>
+          {% if pager.prev_page > 0 %}
+              <a class="arrow arrow__left" href="{{ pager.prev_page_url | relativize_url }}/index.html">Prev</a>
+          {% endif %}
+      </div>
+      <div class="nav-label">Page {{ pager.current_page }} of {{ pager.total_pages }}</div>
+      <div>
+          {% if pager.next_page > 0 %}
+              <a class="arrow arrow__right" href="{{ pager.next_page_url | relativize_url }}/index.html">Next</a>
+          {% endif %}
+      </div>
+    </div>
     {% endif %}
-	</p></div>
 </div>
