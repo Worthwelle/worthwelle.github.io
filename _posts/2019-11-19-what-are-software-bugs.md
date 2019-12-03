@@ -35,7 +35,7 @@ Thankfully this bug was discovered in simulations[^risksdig_f16] and it was fixe
 
 ## Where do bugs come from?
 
-When programmers create a piece of software, they do so using what's called a programming language. There are many of these languages, each with a focus on specific types of development. The general purpose for them is the same: the language allow a programmer to give instructions to the computer.
+When programmers create a piece of software, they do so using what's called a programming language. There are many of these languages, each with a focus on specific types of development. The general purpose for them is the same: the language allows a programmer to give instructions to the computer.
 
 Just as we sometimes have miscommunications when we talk to people, sometimes there is a miscommunication between a programmer and a computer. As with people, this is often a result of misused punctuation. Punctuation is used to give structure to the instructions that the computer has to follow.
 
@@ -59,10 +59,14 @@ Naturally, if software engineers are required to think of all the possible input
 
 ---
 
+Understanding not only what software bugs are, but also how to find them is becoming increasingly important as software gets more complex. Hospitals, emergency response, banks, airplanes and cars are only a few examples of places where software is used to control vital processes and can save lives. If the software doesn't work as intended, it could ruin those lives instead.
+
+---
+
 [^chicagotrib_f16]: Van, Jon. (1986-12-14). ["Software Bugs Turning Deadly In Complex Era"][chicagotrib_f16]. Chicago Tribune. Retrieved November 19, 2019.
 [^risksdig_f16]: Peter G. Neumann. (August 14, 1986). ["F-16 Problems (from Usenet net.aviation)"][risksdig_f16]. The RISKS Digest. **3** (44). August 14, 1986. Retrieved November 19, 2019.
-[^bloomberg_uber]: Benne, Ryan, Levin, Alan. (2019-11-05). ["Self-Driving Uber in Crash Wasn't Designed to See Jaywalkers"][bloomberg_uber]. Bloomberg. Retrieved on 2019-11-19.
-[^ieee_edison_bug]: Magoun, Alexander B., Israel, Paul. (2013-08-01). ["Did You Know? Edison Coined the Term "Bug""][ieee_edison_bug]. Retrieved July 19, 2019.
+[^bloomberg_uber]: Benne, Ryan and Levin, Alan. (2019-11-05). ["Self-Driving Uber in Crash Wasn't Designed to See Jaywalkers"][bloomberg_uber]. Bloomberg. Retrieved on 2019-11-19.
+[^ieee_edison_bug]: Magoun, Alexander B. and Israel, Paul. (2013-08-01). ["Did You Know? Edison Coined the Term "Bug""][ieee_edison_bug]. Retrieved July 19, 2019.
 
 [chicagotrib_f16]: https://www.chicagotribune.com/news/ct-xpm-1986-12-14-8604030475-story.html
 [risksdig_f16]: http://catless.ncl.ac.uk/Risks/3.44.html#subj1
