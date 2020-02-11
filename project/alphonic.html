@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Alphonic</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <style>
+            html, body {
+                height: 100%;
+                display:flex;
+                flex-direction:column;
+            }
+            
+            html {
+                width: 100%
+            }
+            
+            body {
+                width: 75%;
+                margin: 10px auto;
+            }
+      
+        </style>
+    </head>
+
+    <body onload="getAlphabets()">
+        <form style="width:75%; margin: auto;">
+            <h1>Alphonic</h1>
+            <p>A library for converting strings into and from phonetic spellings for use over the phone, a radio or other unclear communications channels. Alphonic provides these conversions not only using the standard NATO alphabet, but also various other phonetic alphabets, making it perfect for easily converting strings with historical accuracy.</p>
+            <p>Find more information on <a href="https://github.com/Worthwelle/Alphonic">GitHub</a>.</p>
+            
+            
+            <div class="form-group">
+                <label for="alphabet">Alphabet</label>
+                <select class="form-control" id="alphabet">
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alphabetInfo" onclick="getAlphabetInfo()">
+                  Details
+                </button>
+                <div class="modal fade" id="alphabetInfo" tabindex="-1" role="dialog" aria-labelledby="alphabetLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="alphabetLabel">Alphabet Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div id="alphabetDescription" class="modal-body">
+                        Loading...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input">Text to convert</label>
+                <textarea class="form-control" id="input" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" onclick="loadDoc(); return false;" >Convert</button>
+            </div>
+            <div class="form-group">
+                <label>Converted text</label>
+                <pre class="form-control" style="height: auto; min-height: 150px;" id="demo"></pre>
+            </div>
+        </form>
+        
+        
+        <script src="/js/alphonic.js"></script>
+    </body>
+</html>
