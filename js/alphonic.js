@@ -13,10 +13,10 @@ function phonetify() {
     getData('api/phonetify/'+alpha+'/'+input, function() {
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
-            document.getElementById("phonetified").innerHTML = json.output;
+            document.getElementById("phonetified").value = json.output;
+            unphonetify();
         }
     });
-    unphonetify();
 }
 
 function unphonetify() {
