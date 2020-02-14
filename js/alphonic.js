@@ -7,13 +7,25 @@ function getData(url, func) {
     xhttp.send();
 }
 
-function loadDoc() {
+function phonetify() {
     var input = document.getElementById('input').value.replace(/(\r\n|\n|\r)/gm,'%0A');
     var alpha = document.getElementById('alphabet').value;
-    getData("api/phonetify/"+alpha+"/"+input, function() {
+    getData('api/phonetify/'+alpha+'/'+input, function() {
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
-            document.getElementById("demo").innerHTML = json.output;
+            document.getElementById("phonetified").innerHTML = json.output;
+        }
+    });
+    unphonetify();
+}
+
+function unphonetify() {
+    var input = document.getElementById('phonetified').value.replace(/(\r\n|\n|\r)/gm,'%0A');
+    var alpha = document.getElementById('alphabet').value;
+    getData('api/unphonetify/'+alpha+'/'+input, function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var json = JSON.parse(this.responseText);
+            document.getElementById('unphonetified').innerHTML = json.output;
         }
     });
 }
