@@ -8,7 +8,7 @@ function getData(url, func) {
 }
 
 function phonetify() {
-    var input = document.getElementById('input').value.replace(/(\r\n|\n|\r)/gm,'%0A');
+    var input = document.getElementById('unphonetified').value.replace(/(\r\n|\n|\r)/gm,'%0A');
     var alpha = document.getElementById('alphabet').value;
     getData('api/phonetify/'+alpha+'/'+input, function() {
         if (this.readyState == 4 && this.status == 200) {

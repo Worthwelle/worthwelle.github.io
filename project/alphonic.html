@@ -38,21 +38,15 @@ title: Alphonic
             </div>
             <div class="form-group">
                 <label for="input">Text to spell</label>
-                <textarea class="form-control" id="input" rows="5"></textarea>
+                <textarea class="form-control" id="unphonetified" rows="5"></textarea>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" onclick="phonetify(); return false;" >Convert</button>
+                <button class="btn btn-primary" onclick="phonetify(); return false;" >&uarr;</button>
+                <button class="btn btn-primary" onclick="unphonetify(); return false;" >&darr;</button>
             </div>
             <div class="form-group">
                 <label>Spelled out text</label>
                 <textarea class="form-control" id="phonetified" rows="5"></textarea>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary" onclick="unphonetify(); return false;" >Convert</button>
-            </div>
-            <div class="form-group">
-                <label>Un-spelled out text</label>
-                <pre class="form-control" style="height: auto; min-height: 150px;" id="unphonetified"></pre>
             </div>
         </form>
         
