@@ -14,7 +14,6 @@ function phonetify() {
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
             document.getElementById("phonetified").value = json.output;
-            unphonetify();
         }
     });
 }
@@ -25,7 +24,7 @@ function unphonetify() {
     getData('api/unphonetify/'+alpha+'/'+input, function() {
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
-            document.getElementById('unphonetified').innerHTML = json.output;
+            document.getElementById('unphonetified').value = json.output;
         }
     });
 }
