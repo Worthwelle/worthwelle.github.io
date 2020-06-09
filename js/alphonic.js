@@ -35,11 +35,21 @@ function getAlphabets() {
             var sel = document.getElementById("alphabet");
             var json = JSON.parse(this.responseText);
             Object.keys(json).forEach(function (item) {
-                opt = document.createElement("option");
-                opt.appendChild( document.createTextNode( json[item]) );
-                opt.value = item;
-                if( item == "NATO" ) opt.selected = true;
-                sel.appendChild(opt);
+                if( Array.isArray(json[item]) ) {
+                    json[item].forEach(function (label) {
+                        opt = document.createElement("option");
+                        opt.appendChild( document.createTextNode( label) );
+                        opt.value = item;
+                        if( label == "NATO Phonetic Alphabet" ) opt.selected = true;
+                        sel.appendChild(opt);
+                    });
+                } else {
+                    opt = document.createElement("option");
+                    opt.appendChild( document.createTextNode( json[item]) );
+                    opt.value = item;
+                    if( item == "NATO" ) opt.selected = true;
+                    sel.appendChild(opt);
+                }
             });
         }
     });
