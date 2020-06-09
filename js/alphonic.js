@@ -51,6 +51,7 @@ function getAlphabets() {
                     sel.appendChild(opt);
                 }
             });
+            sortSelect(sel);
         }
     });
 }
@@ -85,4 +86,25 @@ function getAlphabetInfo() {
             modal.appendChild(sourc);
         }
     });
+}
+
+// https://stackoverflow.com/a/278509/9882907
+function sortSelect(selElem) {
+    var dflt = selElem.options[ selElem.selectedIndex ].value
+    var tmpAry = new Array();
+    for (var i=0;i<selElem.options.length;i++) {
+        tmpAry[i] = new Array();
+        tmpAry[i][0] = selElem.options[i].text;
+        tmpAry[i][1] = selElem.options[i].value;
+    }
+    tmpAry.sort();
+    while (selElem.options.length > 0) {
+        selElem.options[0] = null;
+    }
+    for (var i=0;i<tmpAry.length;i++) {
+        var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+        if( tmpAry[i][1] == dflt ) op.selected = true;
+        selElem.options[i] = op;
+    }
+    return;
 }
