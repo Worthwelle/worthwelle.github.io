@@ -57,18 +57,39 @@ function getAlphabets() {
 }
 
 function getAlphabetInfo() {
-    var alpha = document.getElementById('alphabet').value;
-    document.getElementById("alphabetLabel").innerText = "Alphabet Details";
-    document.getElementById("alphabetDescription").innerText = "Loading...";
-    getData("api/info/"+alpha, function() {
+    var alpha = document.getElementById('alphabet');
+    var title = document.getElementById("alphabetLabel");
+    var modal = document.getElementById("alphabetDescription");
+    title.innerText = "Alphabet Details";
+    modal.innerText = "Loading...";
+    getData("api/info/"+alpha.value, function() {
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
-            
-            var title = document.getElementById("alphabetLabel");
-            title.innerText = json.title;
-            
-            var modal = document.getElementById("alphabetDescription");
             modal.innerHTML = '';
+            
+            if( Array.isArray(json.title) ) {
+                var titles = document.createElement("ul");
+                var aka = document.createElement("p");
+                json.title.forEach(function (label) {
+                    if( label != alpha.options[alpha.selectedIndex].text ) {
+                        var li = document.createElement("li");
+                        li.innerHTML = label;
+                        titles.appendChild(li);
+                    }
+                    else {
+                        title.innerText = label;
+                    }
+                });
+                var akaLabel = document.createElement("b");
+                akaLabel.appendChild( document.createTextNode("Also known as:") );
+                aka.appendChild(akaLabel);
+                
+                aka.appendChild( titles );
+                modal.appendChild(aka);
+            } else {
+                title.innerText = json.title;
+            }
+            
             descr = document.createElement("p");
             descr.appendChild( document.createTextNode(json.description) );
             modal.appendChild(descr);
