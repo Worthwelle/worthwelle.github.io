@@ -153,11 +153,9 @@ function initializeLocationChangeEvent() {
     });
 }
 
-function getTranslationFromURL() {
-    if( location.hash == "" ) return;
-    var url = location.hash.slice(1);
-    var parts = url.split("&");
-    var variables = [];
+function cleanInputs(array) {
+	var variables = [];
+	var parts = getInputs();
     parts.forEach(function(value) {
         if( value.indexOf('=') == -1 ) {
             variables[value] = true;
@@ -170,9 +168,16 @@ function getTranslationFromURL() {
             variables[valParts[0]] = valParts[1];
         }
     });
-    Object.keys(variables).forEach(function(key, index) {
-      console.log(key+": "+this[key]);
-    }, variables);
+	return variables;
+}
+
+function getInputs() {
+	return location.hash.slice(1).split("&");
+}
+
+function getTranslationFromURL() {
+    if( location.hash == "" ) return;
+    var variables = cleanInputs();
     
     if (typeof variables["alphabet"] !== 'undefined') {
         document.getElementById('alphabet').value = variables["alphabet"];
@@ -187,4 +192,4 @@ function getTranslationFromURL() {
 }
 
 initializeLocationChangeEvent();
-window.addEventListener('locationchange', getTranslationFromURL)
+window.addEventListener('locationchange', getTranslationFromURL);
