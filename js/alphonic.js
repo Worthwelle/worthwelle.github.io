@@ -149,7 +149,6 @@ function initializeLocationChangeEvent() {
 	window.addEventListener('popstate',()=>{
 		window.dispatchEvent(new Event('locationchange'))
 	});
-
 }
 
 function getTranslationFromURL() {
@@ -163,6 +162,7 @@ function getTranslationFromURL() {
 			var valParts = value.split('=');
 			if( valParts[1] == "true" ) valParts[1] = true;
 			if( valParts[1] == "false" ) valParts[1] = false;
+			if( valParts[0] == "alphabet" ) valParts[1] = valParts[1].toUpperCase();
 			variables[valParts[0]] = valParts[1];
 		}
 	});
@@ -170,9 +170,14 @@ function getTranslationFromURL() {
 	  console.log(key+": "+this[key]);
 	}, variables);
 	
-	alert(variables["alphabet"].toUpperCase());
-    var alpha = document.getElementById('alphabet');
-	alpha.value = variables["alphabet"].toUpperCase()
+	document.getElementById('alphabet').value = variables["alphabet"];
+	if (typeof variables["ph"] !== 'undefined') {
+		document.getElementById('unphonetified').value = variables["ph"].replace(/(\r\n|\n|\r)/gm,'%0A');
+		phonetify();
+	} else if (typeof variables["uph"] !== 'undefined') {
+		document.getElementById('phonetified').value = variables["uph"].replace(/(\r\n|\n|\r)/gm,'%0A');
+		unphonetify();
+	}
 }
 
 initializeLocationChangeEvent();
