@@ -152,6 +152,7 @@ function initializeLocationChangeEvent() {
 }
 
 function getTranslationFromURL() {
+	if( location.hash == "" ) return;
 	var url = location.hash.slice(1);
 	var parts = url.split("&");
 	var variables = [];
@@ -170,7 +171,9 @@ function getTranslationFromURL() {
 	  console.log(key+": "+this[key]);
 	}, variables);
 	
-	document.getElementById('alphabet').value = variables["alphabet"];
+	if (typeof variables["alphabet"] !== 'undefined') {
+		document.getElementById('alphabet').value = variables["alphabet"];
+	}
 	if (typeof variables["ph"] !== 'undefined') {
 		document.getElementById('unphonetified').value = variables["ph"].replace(/(\r\n|\n|\r)/gm,'%0A');
 		phonetify();
@@ -182,3 +185,4 @@ function getTranslationFromURL() {
 
 initializeLocationChangeEvent();
 window.addEventListener('locationchange', getTranslationFromURL)
+getTranslationFromURL();
