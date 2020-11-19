@@ -161,6 +161,7 @@ function getTranslationFromURL() {
 			variables[value] = true;
 		} else {
 			var valParts = value.split('=');
+			valParts[1] = decodeURIComponent(valParts[1]);
 			if( valParts[1] == "true" ) valParts[1] = true;
 			if( valParts[1] == "false" ) valParts[1] = false;
 			if( valParts[0] == "alphabet" ) valParts[1] = valParts[1].toUpperCase();
@@ -175,10 +176,10 @@ function getTranslationFromURL() {
 		document.getElementById('alphabet').value = variables["alphabet"];
 	}
 	if (typeof variables["ph"] !== 'undefined') {
-		document.getElementById('unphonetified').value = variables["ph"].replace(/(\r\n|\n|\r)/gm,'%0A');
+		document.getElementById('unphonetified').value = variables["ph"];
 		phonetify();
 	} else if (typeof variables["uph"] !== 'undefined') {
-		document.getElementById('phonetified').value = variables["uph"].replace(/(\r\n|\n|\r)/gm,'%0A');
+		document.getElementById('phonetified').value = variables["uph"];
 		unphonetify();
 	}
 }
