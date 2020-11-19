@@ -52,6 +52,7 @@ function getAlphabets() {
                 }
             });
             sortSelect(sel);
+            getTranslationFromURL();
         }
     });
 }
@@ -129,61 +130,61 @@ function sortSelect(selElem) {
     }
     return;
 }
+
 // https://stackoverflow.com/a/52809105/9882907
 function initializeLocationChangeEvent() {
-	/* These are the modifications: */
-	history.pushState = ( f => function pushState(){
-		var ret = f.apply(this, arguments);
-		window.dispatchEvent(new Event('pushstate'));
-		window.dispatchEvent(new Event('locationchange'));
-		return ret;
-	})(history.pushState);
+    /* These are the modifications: */
+    history.pushState = ( f => function pushState(){
+        var ret = f.apply(this, arguments);
+        window.dispatchEvent(new Event('pushstate'));
+        window.dispatchEvent(new Event('locationchange'));
+        return ret;
+    })(history.pushState);
 
-	history.replaceState = ( f => function replaceState(){
-		var ret = f.apply(this, arguments);
-		window.dispatchEvent(new Event('replacestate'));
-		window.dispatchEvent(new Event('locationchange'));
-		return ret;
-	})(history.replaceState);
+    history.replaceState = ( f => function replaceState(){
+        var ret = f.apply(this, arguments);
+        window.dispatchEvent(new Event('replacestate'));
+        window.dispatchEvent(new Event('locationchange'));
+        return ret;
+    })(history.replaceState);
 
-	window.addEventListener('popstate',()=>{
-		window.dispatchEvent(new Event('locationchange'))
-	});
+    window.addEventListener('popstate',()=>{
+        window.dispatchEvent(new Event('locationchange'))
+    });
 }
 
 function getTranslationFromURL() {
-	if( location.hash == "" ) return;
-	var url = location.hash.slice(1);
-	var parts = url.split("&");
-	var variables = [];
-	parts.forEach(function(value) {
-		if( value.indexOf('=') == -1 ) {
-			variables[value] = true;
-		} else {
-			var valParts = value.split('=');
-			valParts[1] = decodeURIComponent(valParts[1]);
-			if( valParts[1] == "true" ) valParts[1] = true;
-			if( valParts[1] == "false" ) valParts[1] = false;
-			if( valParts[0] == "alphabet" ) valParts[1] = valParts[1].toUpperCase();
-			variables[valParts[0]] = valParts[1];
-		}
-	});
-	Object.keys(variables).forEach(function(key, index) {
-	  console.log(key+": "+this[key]);
-	}, variables);
-	
-	if (typeof variables["alphabet"] !== 'undefined') {
-		document.getElementById('alphabet').value = variables["alphabet"];
-	}
-	if (typeof variables["ph"] !== 'undefined') {
-		document.getElementById('unphonetified').value = variables["ph"];
-		phonetify();
-	} else if (typeof variables["uph"] !== 'undefined') {
-		document.getElementById('phonetified').value = variables["uph"];
-		unphonetify();
-	}
+    if( location.hash == "" ) return;
+    var url = location.hash.slice(1);
+    var parts = url.split("&");
+    var variables = [];
+    parts.forEach(function(value) {
+        if( value.indexOf('=') == -1 ) {
+            variables[value] = true;
+        } else {
+            var valParts = value.split('=');
+            valParts[1] = decodeURIComponent(valParts[1]);
+            if( valParts[1] == "true" ) valParts[1] = true;
+            if( valParts[1] == "false" ) valParts[1] = false;
+            if( valParts[0] == "alphabet" ) valParts[1] = valParts[1].toUpperCase();
+            variables[valParts[0]] = valParts[1];
+        }
+    });
+    Object.keys(variables).forEach(function(key, index) {
+      console.log(key+": "+this[key]);
+    }, variables);
+    
+    if (typeof variables["alphabet"] !== 'undefined') {
+        document.getElementById('alphabet').value = variables["alphabet"];
+    }
+    if (typeof variables["ph"] !== 'undefined') {
+        document.getElementById('unphonetified').value = variables["ph"];
+        phonetify();
+    } else if (typeof variables["uph"] !== 'undefined') {
+        document.getElementById('phonetified').value = variables["uph"];
+        unphonetify();
+    }
 }
 
 initializeLocationChangeEvent();
 window.addEventListener('locationchange', getTranslationFromURL)
-getTranslationFromURL();
