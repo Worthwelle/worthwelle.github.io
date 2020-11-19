@@ -129,3 +129,51 @@ function sortSelect(selElem) {
     }
     return;
 }
+// https://stackoverflow.com/a/52809105/9882907
+function initializeLocationChangeEvent() {
+	/* These are the modifications: */
+	history.pushState = ( f => function pushState(){
+		var ret = f.apply(this, arguments);
+		window.dispatchEvent(new Event('pushstate'));
+		window.dispatchEvent(new Event('locationchange'));
+		return ret;
+	})(history.pushState);
+
+	history.replaceState = ( f => function replaceState(){
+		var ret = f.apply(this, arguments);
+		window.dispatchEvent(new Event('replacestate'));
+		window.dispatchEvent(new Event('locationchange'));
+		return ret;
+	})(history.replaceState);
+
+	window.addEventListener('popstate',()=>{
+		window.dispatchEvent(new Event('locationchange'))
+	});
+
+}
+
+function getTranslationFromURL() {
+	var url = location.hash.slice(1);
+	var parts = url.split("&");
+	var variables = [];
+	parts.forEach(function(value) {
+		if( value.indexOf('=') == -1 ) {
+			variables[value] = true;
+		} else {
+			var valParts = value.split('=');
+			if( valParts[1] == "true" ) valParts[1] = true;
+			if( valParts[1] == "false" ) valParts[1] = false;
+			variables[valParts[0]] = valParts[1];
+		}
+	});
+	Object.keys(variables).forEach(function(key, index) {
+	  console.log(key+": "+this[key]);
+	}, variables);
+	
+	alert(variables["alphabet"].toUpperCase());
+    var alpha = document.getElementById('alphabet');
+	alpha.value = variables["alphabet"].toUpperCase()
+}
+
+initializeLocationChangeEvent();
+window.addEventListener('locationchange', getTranslationFromURL)
