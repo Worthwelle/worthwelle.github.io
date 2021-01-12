@@ -15,6 +15,7 @@ module Blog
     #
     # Returns an Array of String filenames.
     def posts
+      # diffable_files = `git status --porcelain | awk '!match($1, "D"){print $2}' | grep .md`.split("\n")
       diffable_files = `git diff --name-only --diff-filter=ACMRTUXB origin/master... | grep .md`.split("\n")
 
       posts = diffable_files.select do |filename|

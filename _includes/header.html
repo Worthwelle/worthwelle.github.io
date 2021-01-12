@@ -8,24 +8,24 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/index.html"><img src="/img/wits_logo.png" alt="Worthwelle IT Services"></a>
+					<a class="navbar-brand" href="{{ '/index.html' | relativize_url }}"><img src="{{ '/img/wits_logo.png' | relativize_url }}" alt="Worthwelle IT Services"></a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						{% if page.path contains 'index.md' %}
-						<li class="active"><a href="/index.html"><i class="glyphicon glyphicon-home hidden-lg"></i> Home</a></li>
+						<li class="active"><a href="{{ '/index.html' | relativize_url }}"><i class="glyphicon glyphicon-home hidden-lg"></i> Home</a></li>
 						{% else %}
-						<li><a href="/index.html"><i class="glyphicon glyphicon-home hidden-lg"></i> Home</a></li>
+						<li><a href="{{ '/index.html' | relativize_url }}"><i class="glyphicon glyphicon-home hidden-lg"></i> Home</a></li>
 						{% endif %}
 						{% if page.path contains 'about.md' %}
-						<li class="active"><a href="/about.html"><i class="glyphicon glyphicon-about hidden-lg"></i> About</a></li>
+						<li class="active"><a href="{{ '/about.html' | relativize_url }}"><i class="glyphicon glyphicon-about hidden-lg"></i> About</a></li>
 						{% else %}
-						<li><a href="/about.html"><i class="glyphicon glyphicon-about hidden-lg"></i> About</a></li>
+						<li><a href="{{ '/about.html' | relativize_url }}"><i class="glyphicon glyphicon-about hidden-lg"></i> About</a></li>
 						{% endif %}
 						{% if page.id or page.path contains 'blog.md' %}
-						<li class="active"><a href="/blog.html"><i class="glyphicon glyphicon-question-sign hidden-lg"></i> Blog</a></li>
+						<li class="active"><a href="{{ '/blog.html' | relativize_url }}"><i class="glyphicon glyphicon-question-sign hidden-lg"></i> Blog</a></li>
 						{% else %}
-						<li><a href="/blog.html"><i class="glyphicon glyphicon-question-sign hidden-lg"></i> Blog</a></li>
+						<li><a href="{{ '/blog.html' | relativize_url }}"><i class="glyphicon glyphicon-question-sign hidden-lg"></i> Blog</a></li>
 						{% endif %}
 						
 					</ul>

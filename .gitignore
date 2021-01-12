@@ -1,9 +1,8 @@
 Vagrantfile
 *.bak
-_site/
-_scripts/
+.vagrant/
 .bundle/
+_site/
+.sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-.sass-cache/
-.vagrant/

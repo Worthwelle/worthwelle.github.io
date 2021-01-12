@@ -22,12 +22,12 @@ You might be wondering how this can be a bad thing. Generally speaking, it isn't
 
 As your computer runs out of resources, it can start doing some very odd things. This has lead to one of the most maligned phrases in the IT support industry: "Have you tried turning it off and on again?" Restarting your computer is a great way to clear out all of the resources that have been claimed by whatever applications are running in the background. This is an easy and often surprising fix for some of the strangest computer issues.
 
-*Find out how shutting down your computer is different from putting it into sleep or hibernate mode here [here]({% post_url 2018-05-01-3-ways-to-turn-off-your-computer-and-what-they-really-do %}).*
+*Find out how shutting down your computer is different from putting it into sleep or hibernate mode here [here]({{ "/" | relativize_url }}{% post_url 2018-05-01-3-ways-to-turn-off-your-computer-and-what-they-really-do %}).*
 
 ## When?
 
 Ideally, you should turn off your computer every evening, but we don't live in an ideal world. Sometimes we need to let something run overnight. Other times the computer is slow to start and so we leave it running.
 
-We strongly advise that you restart your computer at least once every week to fix the issues mentioned in this article. If you need to make sure the computer is ready for the next morning, restart the computer before you go to bed, then use [sleep or hibernate mode]({% post_url 2018-05-01-3-ways-to-turn-off-your-computer-and-what-they-really-do %}) to save some power.
+We strongly advise that you restart your computer at least once every week to fix the issues mentioned in this article. If you need to make sure the computer is ready for the next morning, restart the computer before you go to bed, then use [sleep or hibernate mode]({{ "/" | relativize_url }}{% post_url 2018-05-01-3-ways-to-turn-off-your-computer-and-what-they-really-do %}) to save some power.
 
 If you notice that you're having to restart your computer more  and more frequently, it may be a sign of a much bigger issue. It is difficult to say how often is too often. If you're having trouble figuring out what is causing the slowness, feel free to reach out to us for a remote diagnosis.

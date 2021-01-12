@@ -71,6 +71,6 @@ Computers are both simple and complex machines. They're simple in that they do e
 
 Some examples include:
 
-The issues caused by applications that don't allocate their resources properly are the reason for the dreaded question: ["Have you tried turning it off and on again?"]({% post_url 2018-05-22-why-should-i-turn-it-off-and-on-again %}) The symptoms of improper resource allocation are varied and often difficult to narrow down, so knowing that a lot of documents are open or the computer has been on for a long time is important.
+The issues caused by applications that don't allocate their resources properly are the reason for the dreaded question: ["Have you tried turning it off and on again?"]({{ "/" | relativize_url }}{% post_url 2018-05-22-why-should-i-turn-it-off-and-on-again %}) The symptoms of improper resource allocation are varied and often difficult to narrow down, so knowing that a lot of documents are open or the computer has been on for a long time is important.
 
 There are many applications available for fixing slow computers by "fixing registry errors". More often than not they cause more problems than they solve. These applications don't bother with understanding the context of the issue and go straight into solving whatever "issues" they find. Since the Windows Registry is a complex set of interacting configurations, removing something that seems innocuous can have larger consequences down the road.

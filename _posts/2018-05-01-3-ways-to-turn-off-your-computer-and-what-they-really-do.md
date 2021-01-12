@@ -12,7 +12,7 @@ When computer users think about the actions that they do the most often with the
 
 Electronics are becoming more and more vital to every day life and turning these electronics off is an important part in ensuring that they will not only continue to function, but also that they will function the way that we expect.
 
-*Find out why this is true [here]({% post_url 2018-05-22-why-should-i-turn-it-off-and-on-again %}).*
+*Find out why this is true [here]({{ "/" | relativize_url }}{% post_url 2018-05-22-why-should-i-turn-it-off-and-on-again %}).*
 
 Before we dive into the different ways that we can turn off our devices, let's clear up one bit of terminology. A term commonly used when discussing computers is **memory**. There are two possible meanings for this term as used by your average computer user.
 
